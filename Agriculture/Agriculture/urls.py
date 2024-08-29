@@ -24,9 +24,15 @@ from AgriApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.HomePage,name="homepage"),
+    path('dash/',views.dashboard1,name="dash1"),
     path('predicts',views.predict,name="predict"),
     path('chat/',views.chat,name="chat"),
-    path('disease-predict/', views.disease_prediction, name='disease_prediction')
+    path('disease-predict/', views.disease_prediction, name='disease_prediction'),
+    path('weather/dashboard/',views.weather_dashboard,name="dashboard"),
+    path('fertilizer/',views.predict12,name = "fertilizer"),
+    path('chat12/',views.chat12,name="chat12"),
+    path('signup/', views.signup, name='signup'),
+    path('login/',views.login_view,name="login")
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

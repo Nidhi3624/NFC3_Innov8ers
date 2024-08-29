@@ -1,0 +1,23 @@
+<!-- weather/templates/weather/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Weather Dashboard</h1>
+    <div>
+        <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+        <p><strong>Humidity:</strong> {{ weather.humidity }}%</p>
+        <p><strong>Weather Description:</strong> {{ weather.description }}</p>
+        <p><strong>Wind Speed:</strong> {{ weather.wind_speed }} m/s</p>
+        <p><strong>Wind Direction:</strong> {{ weather.wind_direction }}°</p>
+        <p><strong>Pressure:</strong> {{ weather.pressure }} hPa</p>
+        <p><strong>Cloudiness:</strong> {{ weather.cloudiness }}%</p>
+    </div>
+</body>
+</html>

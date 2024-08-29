@@ -1,33 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
-
+ {% load static %}
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <title>Responsive Animated Website </title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <!-- Fonts CSS -->
+    
+
+    <!-- Box Icons  -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- AOS Library Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+     -->
 </head>
 
 <body>
-    <p>
-        Hello world
-    </p>
+    <!-- Navbar Starts -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white" data-aos="fade-down">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <!-- Interactive Login Button -->
+                    <li class="nav-item login-item">
+                        <a href="{% url 'login' %}" style="text-decoration: none; color: inherit;" target="_self">
+                            <button class="login-button">Login</button>
+                        </a>
+                    </li>
 
-    <div id="chat-container">
-        <div id="chat-messages">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Starts -->
+    <section id="home" style="background-image: url(media/images/home_back.png)" class="bg-cover hero-section">
+        <div class="overlay"></div>
+        <div class="container text-white text-center">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-4" data-aos="zoom-in">
+                        Smart Agriculture <br /> for a <br /><span class="text-wrapper-17"> Better Tomorrow </span>
+                    </h1>
+                    <p class="my-4" data-aos="fade-up">
+                        Harnessing technology to optimize farming, boost yields, <br />
+                        and promote sustainable practices for a healthier future.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services section Starts -->
+    <section id="services" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-intro text-center" data-aos="fade-up">
+                    <h1>Our Services</h1>
+                    <div class="divider"></div>
+                    <p>
+                        our service aims to empower farmers with technology-driven tools that enhance productivity,
+                        sustainability,
+                        and profitability in agriculture.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="service">
+                        <div class="service-img">
+                            <img class="unique" src="media/images/Illustration_Analytics.png" alt="" />
+                            <div class="icon"><img src="media/images/group.png" alt="" /></div>
+                            <h5 class="mt-5 pt-4">Real-Time Insights</h5>
+                            <p>
+                                There are many variations of passages of Lorem Ipsum
+                                available, but the majority have suffereed alterationin some
+                                form
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="service">
+                        <div class="service-img">
+                            <img src="media/images/crop_recomm.webp" alt="" />
+                            <div class="icon"><img src="media/images/group-1.png" alt="" /></div>
+                            <h5 class="mt-5 pt-4">Customized Recommendations</h5>
+                            <p>
+                                There are many variations of passages of Lorem Ipsum
+                                available, but the majority have suffereed alterationin some
+                                form
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="zoom-in">
+
+                    <div class="service">
+                        <div class="service-img">
+                            <img src="media/images/analysis.avif" alt="" />
+                            <div class="icon"><img src="media/images/icon.png" alt="" /></div>
+                            <h5 class="mt-5 pt-4">Predictive Analytics</h5>
+                            <p>
+                                There are many variations of passages of Lorem Ipsum
+                                available, but the majority have suffereed alterationin some
+                                form
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Features Section -->
+    <section id="features" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-intro text-center" data-aos="fade-up">
+                    <h1>AI-Powered Crop Optimization System</h1>
+                </div>
+            </div>
+
+            <div class="row gx-4 gy-5">
+                <div class="col-md-4 feature" data-aos="fade-up">
+                    <a href="{% url 'predict'%}" style="text-decoration: none; color: inherit;" target="_self">
+                        <div class="content">
+                            <div class="icon"><img src="media/images/rectangle-10-2.png" alt="" /></div>
+                            <h5 class="mt-4 mb-3">Crop Recommedation</h5>
+                            <p>
+                                Recommends the best crops based on weather, soil, and regional factors to boost yield.
+                            </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4 feature" data-aos="fade-up">
+                <a href="{% url 'fertilizer' %}" style="text-decoration: none; color: inherit;" target="_self">
+                    <div class="content">
+                        <div class="icon"><img src="media/images/rectangle-12-1.png" alt="" /></div>
+                        <h5 class="mt-4 mb-3">Soil Recommedation</h5>
+                        <p>
+                            Suggests fertilizers and application rates tailored to crop and soil health for optimal
+                            growth.
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 feature" data-aos="fade-up">
+                <a href="{% url 'disease_prediction'%}" style="text-decoration: none; color: inherit;" target="_self">
+                    <div class="content">
+                        <div class="icon"><img src="media/images/rectangle-12-2.png" alt="" /></div>
+                        <h5 class="mt-4 mb-3">Plant Diseases</h5>
+                        <p>
+                            Uses AI to detect and diagnose plant diseases via media/images, offering treatment
+                            recommendations.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+
+
 
         </div>
-        <div id="user-input">
-            <input type="text" id="user-message" placeholder="Type your message...">
-            <button id="send-btn">Send</button>
+       
+    </section>
+
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-intro text-center">
+                    <h1>Our Testimonial</h1>
+                    <div class="divider"></div>
+                    <p>
+                        There are many passages of lorem ipsum available, but majority
+                        have suffered alteration in some form, by injecting humo, or
+                        randomised words which do not look even slightly
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 text-start">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="review p-4">
+                        <div class="person">
+                            <img src="media/images/avatar_1.jpg" alt="" />
+                            <div class="text ms-3">
+                                <h6 class="mb-0">Emma R.</h6>
+                                <small>Google</small>
+                            </div>
+                        </div>
+                        <p class="pt-4">
+                            CropHealthPro is fantastic! Accurate pest detection, real-time updates, and
+                            easy-to-understand reports
+                            have made managing my crops so much easier. Highly recommend!
+                        </p>
+                        <div class="stars">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="review p-4">
+                        <div class="person">
+                            <img src="media/images/avatar_2.jpg" alt="" />
+                            <div class="text ms-3">
+                                <h6 class="mb-0">Rajiv S.</h6>
+                                <small>Google</small>
+                            </div>
+                        </div>
+                        <p class="pt-4">
+                            Great tool for crop analysis. The weather data integration is helpful. Would love more
+                            customization
+                            options, but overall, a solid platform.
+                        </p>
+                        <div class="stars">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="review p-4">
+                        <div class="person">
+                            <img src="media/images/avatar_3.jpg" alt="" />
+                            <div class="text ms-3">
+                                <h6 class="mb-0">Sarah M.</h6>
+                                <small>Google</small>
+                            </div>
+                        </div>
+                        <p class="pt-4">
+                            Impressive AI accuracy and detailed reports. The security features are a plus. Worth the
+                            investment for
+                            serious crop management.
+                        </p>
+                        <div class="stars">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="review p-4">
+                        <div class="person">
+                            <img src="media/images/avatar_2.jpg" alt="" />
+                            <div class="text ms-3">
+                                <h6 class="mb-0">Daniel K.</h6>
+                                <small>Google</small>
+                            </div>
+                        </div>
+                        <p class="pt-4">
+                            Good for basic analysis, but sometimes slow with large files. Predictive analytics need
+                            fine-tuning.
+                            Interface is user-friendly.
+                        </p>
+                        <div class="stars">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="review p-4">
+                        <div class="person">
+                            <img src="media/images/avatar_3.jpg" alt="" />
+                            <div class="text ms-3">
+                                <h6 class="mb-0">Maria L.</h6>
+                                <small>Google</small>
+                            </div>
+                        </div>
+                        <p class="pt-4">
+                            Valuable tool for organic farming. Real-time alerts and educational resources are great.
+                            Mobile app could
+                            use some improvement.
+                        </p>
+                        <div class="stars">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="review p-4">
+                        <div class="person">
+                            <img src="media/images/avatar_1.jpg" alt="" />
+                            <div class="text ms-3">
+                                <h6 class="mb-0">Alex J.</h6>
+                                <small>Google</small>
+                            </div>
+                        </div>
+                        <p class="pt-4">
+                            CropHealthPro is excellent! The AI insights are precise, and the real-time monitoring helps
+                            me catch
+                            issues early. Highly effective tool for modern farming.
+                        </p>
+                        <div class="stars">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Blog Section -->
+    <section id="blog" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-intro text-center" data-aos="fade-up">
+                    <h1>Our Blog Posts</h1>
+                    <div class="divider"></div>
+                    <p>
+                        There are many passages of lorem ipsum available, but majority
+                        have suffered alteration in some form, by injecting humo, or
+                        randomised words which do not look even slightly
+                    </p>
+                </div>
+            </div>
 
-    <script src="{% static 'js/chat.js' %}"></script>
-</body>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <img src="media/images/blog_post1.jpg" alt="blogpost pic" />
+                    <div class="mt-4">
+                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
+                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                            labore eum dolore?
+                        </p>
+                    </div>
+                </div>
 
+                <div class="col-md-4" data-aos="fade-up">
+                    <img src="media/images/blog_post2.jpg" alt="blogpost pic" />
+                    <div class="mt-4">
+                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
+                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                            labore eum dolore?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <img src="media/images/blog_post3.jpg" alt="blogpost pic" />
+                    <div class="mt-4">
+                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
+                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                            labore eum dolore?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About Section-->
+    <section id="about" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-intro text-center" data-aos="fade-up">
+                    <h1>About Us</h1>
+                    <div class="divider"></div>
+                    <p>
+                        There are many passages of lorem ipsum available, but majority
+                        have suffered alteration in some form, by injecting humo, or
+                        randomised words which do not look even slightly
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <img src="media/images/blog_post1.jpg" alt="blogpost pic" />
+                    <div class="mt-4">
+                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
+                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                            labore eum dolore?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <img src="media/images/blog_post2.jpg" alt="blogpost pic" />
+                    <div class="mt-4">
+                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
+                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                            labore eum dolore?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up">
+                    <img src="media/images/blog_post3.jpg" alt="blogpost pic" />
+                    <div class="mt-4">
+                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
+                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
+                            labore eum dolore?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-image: url(media/images/cover_3.jpg)" class="bg-cover text-white">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 section-intro text-center" data-aos="fade-up">
+                    <h1>Get in Touch</h1>
+                    <div class="divider"></div>
+                    <p>
+                        There are many passages of lorem ipsum available, but majority
+                        have suffered alteration in some form, by injecting humo, or
+                        randomised words which do not look even slightly
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 mx-auto" data-aos="fade-up">
+                    <form action="#" class="row g-4">
+                        <div class="form-group col-md-6">
+                            <input type="text" placeholder="Full Name" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input type="email" placeholder="Email Address" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <input type="text" placeholder="Subject" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <textarea name="" id="" cols="30" rows="8" class="form-control"
+                                placeholder="Message"></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-main" type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="mb-0">
+                        Copyrights &copy;2024. Designed & Developed by<b><a style="text-decoration: underline">
+                                Innov8ers
+                            </a></b>
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <div style="letter-spacing: 5px; font-size: 20px">
+                        <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+                        <a href="#"><i class="bx bxl-instagram"></i></a>
+                        <a href="#"><i class="bx bxl-twitter"></i></a>
+                        <a href="#"><i class="bx bxl-linkedin"></i></a>
+                        <a href="#"><i class="bx bxl-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="{% url 'chat12' %}">
+    <button class="chatbot-button">
+        
+        <img src="media/images/chatbot_icon.png" alt="Chatbot" />
+    </button>
+</a>
+    <!-- Bootstrap JS with popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body> 
 </html>

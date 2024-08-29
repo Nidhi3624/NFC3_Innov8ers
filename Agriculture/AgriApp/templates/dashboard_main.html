@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/styledash.css'%}">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="left-panel">
+            <div class="user-profile">
+                <img src="https://i.pinimg.com/564x/cc/b4/3d/ccb43d88f362d1ab22f3ade7004e514f.jpg" alt="User Image" class="profile-image">
+                <h2 class="user-name">Farmer Name</h2>
+                <p class="user-info">Phone: +1 234 567 890</p>
+                <p class="user-info">Country: India</p>
+                <p class="user-info">State: Maharashtra</p>
+                <p class="user-info">City: Mumbai</p>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="widget">
+                <h3>Weather</h3>
+                <p id="weather">Fetching weather data...</p>
+            </div>
+            <div class="widget">
+                <h3>Crop Recommendation</h3>
+                <p id="crop-recommendation">Fetching crop recommendation...</p>
+            </div>
+            <div class="widget">
+                <h3>Fertilizer Recommendation</h3>
+                <p id="fertilizer-recommendation">Fetching fertilizer recommendation...</p>
+            </div>
+            <div class="widget">
+                <h3>Predicted Disease</h3>
+                <p id="predicted-disease">Fetching disease prediction...</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

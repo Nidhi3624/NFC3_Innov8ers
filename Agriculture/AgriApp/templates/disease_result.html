@@ -6,6 +6,7 @@
 <body>
     <h1>{{ title }}</h1>
     <p>Prediction: {{ prediction }}</p>
+    <p>Info: {{message|safe}}</p>
     <a href="{% url 'disease_prediction' %}">Try again</a>
 </body>
 </html>

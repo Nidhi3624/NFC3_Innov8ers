@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
+    {% load static %}
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/disease.css' %}">
 </head>
 <body>
     <h1>{{ title }}</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="file" accept="image/*">
-        <button type="submit">Predict</button>
-    </form>
+    <div class="container">
+        <div class="card">
+            <div class="card-image">
+                <h3 class="card-heading">Disease Identification</h3>
+                <h6>Upload a clear image of the plant to receive accurate disease identification and recommended treatments.</h6>
+            </div>
+            <form  method="post" enctype="multipart/form-data" class="card-form">
+                {% csrf_token %}
+                <div class="file-upload-container">
+                    <label for="fileUpload" class="file-upload-label">Upload an image of the plant:</label>
+                    <input type="file" id="fileUpload" name="file" class="file-upload-input" accept="image/*">
+                </div>
+                <div class="preview-container">
+                    <img id="imagePreview" src="" alt="Image preview will appear here" style="display:none;">
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+            <div class="card-info">
+                <p><a href="{% url 'disease_prediction'%}">Try Again</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript to handle image preview
+        document.getElementById('fileUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const imagePreview = document.getElementById('imagePreview');
+                imagePreview.src = e.target.result;
+                imagePreview.style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>

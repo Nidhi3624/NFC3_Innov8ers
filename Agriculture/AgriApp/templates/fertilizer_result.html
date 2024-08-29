@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Recommedation Result</h1>
+
+    {% if message %}
+        <p><strong>{{message|safe}}</strong></p>
+    {% endif %}
+    <a href="{% url 'predict' %}">Make another prediction</a>
+</body>
+</html>
