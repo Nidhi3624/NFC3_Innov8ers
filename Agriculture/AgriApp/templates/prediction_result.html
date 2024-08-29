@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>The Suggested Crop for Given Climatic Conditions is: <strong>{{ prediction }}</strong></p>
+    {% if message %}
+        <p><strong>{{message|safe}}</strong></p>
+    {% endif %}
+    <a href="{% url 'predict' %}">Make another prediction</a>
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: #d0f7fe;
+    color: black;
+    padding: 5px 20px;
+    line-height: 5px;
+}
+
+#chat-container {
+    width: 90%;
+    margin-top: 100%;
+    margin: 50px auto;
+}
+
+#chat-messages {
+    border: 1px solid #ccc;
+    height: 350px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#user-input {
+    width: 97%;
+    padding: 15px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#user-message {
+    width: 90%;
+    /* Adjust the width as needed */
+    padding: 8px;
+    /* Increase padding for better visual appearance */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    /* Increase font size as needed */
+}
+
+#send-btn {
+    padding: 15px 15px;
+    margin-left: 20px;
+    border: none;
+    background-color: #d0f7fe;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#navbar img {
+    width: 200px;
+    /* Set the width of the image */
+    height: auto;
+    /* Maintain aspect ratio */
+}
