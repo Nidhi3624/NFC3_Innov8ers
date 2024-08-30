@@ -12,7 +12,7 @@ class ModelHandler:
         # Construct the path dynamically
         model_path = os.path.join(settings.BASE_DIR, 'AgriApp', 'model', 'plant_disease_model.pth')
         self.model = ResNet9(in_channels=3, num_diseases=len(disease_classes))  # Adjust as needed
-        self.model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+        self.model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu'), weights_only=True))
         self.model.eval()
 
 

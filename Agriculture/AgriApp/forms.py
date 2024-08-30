@@ -2,6 +2,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from .models import ContactMessage
 
 class SignupForm(forms.ModelForm):
     username = forms.CharField(
@@ -31,3 +32,14 @@ class SignupForm(forms.ModelForm):
             raise ValidationError("Passwords do not match")
 
         return cleaned_data
+    
+
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['full_name', 'email', 'subject', 'message']
+        widgets = {
+            'message': forms.Textarea(attrs={'cols': 30, 'rows': 8}),
+        }

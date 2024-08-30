@@ -32,7 +32,7 @@ function sendMessage() {
         .then(response => response.json())
         .then(data => {
             const apiResponse = data.response;
-            addMessage('AutoMate', apiResponse);
+            addMessage('FarmAsisst', apiResponse);
         })
         .catch(error => console.error('Error:', error));
     }

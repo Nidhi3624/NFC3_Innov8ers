@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
- {% load static %}
+{% load static %}
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Responsive Animated Website </title>
+    <title>FarmWise </title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
     <!-- Fonts CSS -->
-    
+
 
     <!-- Box Icons  -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -35,41 +36,41 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#reviews">Reviews</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <!-- Interactive Login Button -->
-                    <li class="nav-item login-item">
-                        <a href="{% url 'login' %}" style="text-decoration: none; color: inherit;" target="_self">
-                            <button class="login-button">Login</button>
-                        </a>
-                    </li>
+            <div class="web_name">FarmWise</div>
+            <div class="translate-container" id="google_translate_element"></div>
+            <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#blog">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <!-- Interactive Login Button -->
+                <li class="nav-item login-item">
+                    <a href="{% url 'login' %}" style="text-decoration: none; color: inherit;" target="_self">
+                        <button class="login-button">Login</button>
+                    </a>
+                </li>
 
-                </ul>
-            </div>
+            </ul>
+        </div>
         </div>
     </nav>
 
+    <!-- Hero Section Starts -->
     <!-- Hero Section Starts -->
     <section id="home" style="background-image: url(media/images/home_back.png)" class="bg-cover hero-section">
         <div class="overlay"></div>
@@ -77,7 +78,8 @@
             <div class="row">
                 <div class="col-12">
                     <h1 class="display-4" data-aos="zoom-in">
-                        Smart Agriculture <br /> for a <br /><span class="text-wrapper-17"> Better Tomorrow </span>
+                        <strong>FarmWise</strong> <br /> for a <br /><span class="text-wrapper-17"> Better Tomorrow
+                        </span>
                     </h1>
                     <p class="my-4" data-aos="fade-up">
                         Harnessing technology to optimize farming, boost yields, <br />
@@ -111,9 +113,8 @@
                             <div class="icon"><img src="media/images/group.png" alt="" /></div>
                             <h5 class="mt-5 pt-4">Real-Time Insights</h5>
                             <p>
-                                There are many variations of passages of Lorem Ipsum
-                                available, but the majority have suffereed alterationin some
-                                form
+                                Instantly access up-to-date data and metrics to make informed decisions on the fly,
+                                ensuring you stay ahead of trends and respond quickly to changes.
                             </p>
                         </div>
                     </div>
@@ -126,9 +127,8 @@
                             <div class="icon"><img src="media/images/group-1.png" alt="" /></div>
                             <h5 class="mt-5 pt-4">Customized Recommendations</h5>
                             <p>
-                                There are many variations of passages of Lorem Ipsum
-                                available, but the majority have suffereed alterationin some
-                                form
+                                Receive tailored advice on crop choices, fertilizers, and pest control based on local
+                                conditions and historical data to improve yields.
                             </p>
                         </div>
                     </div>
@@ -142,9 +142,8 @@
                             <div class="icon"><img src="media/images/icon.png" alt="" /></div>
                             <h5 class="mt-5 pt-4">Predictive Analytics</h5>
                             <p>
-                                There are many variations of passages of Lorem Ipsum
-                                available, but the majority have suffereed alterationin some
-                                form
+                                Leverage data analytics to predict future crop performance, pest outbreaks, and weather
+                                impacts, allowing for proactive decision-making and efficient farm management.
                             </p>
                         </div>
                     </div>
@@ -171,51 +170,51 @@
             </div>
 
             <div class="row gx-4 gy-5">
+                <!-- Feature 1: Crop Recommendation -->
                 <div class="col-md-4 feature" data-aos="fade-up">
-                    <a href="{% url 'predict'%}" style="text-decoration: none; color: inherit;" target="_self">
+                    <a href="{% url 'predict' %}" style="text-decoration: none; color: inherit;" target="_self">
                         <div class="content">
                             <div class="icon"><img src="media/images/rectangle-10-2.png" alt="" /></div>
-                            <h5 class="mt-4 mb-3">Crop Recommedation</h5>
+                            <h5 class="mt-4 mb-3">Crop Recommendation</h5>
                             <p>
                                 Recommends the best crops based on weather, soil, and regional factors to boost yield.
                             </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Feature 2: Soil Recommendation -->
+                <div class="col-md-4 feature" data-aos="fade-up">
+                    <a href="{% url 'fertilizer' %}" style="text-decoration: none; color: inherit;" target="_self">
+                        <div class="content">
+                            <div class="icon"><img src="media/images/rectangle-12-1.png" alt="" /></div>
+                            <h5 class="mt-4 mb-3">Soil Recommendation</h5>
+                            <p>
+                                Suggests fertilizers and application rates tailored to crop and soil health for optimal
+                                growth.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Feature 3: Plant Diseases -->
+                <div class="col-md-4 feature" data-aos="fade-up">
+                    <a href="{% url 'disease_prediction' %}" style="text-decoration: none; color: inherit;"
+                        target="_self">
+                        <div class="content">
+                            <div class="icon"><img src="media/images/rectangle-12-2.png" alt="" /></div>
+                            <h5 class="mt-4 mb-3">Plant Diseases</h5>
+                            <p>
+                                Uses AI to detect and diagnose plant diseases via images, offering treatment
+                                recommendations.
+                            </p>
+                        </div>
                     </a>
                 </div>
             </div>
-
-            <div class="col-md-4 feature" data-aos="fade-up">
-                <a href="{% url 'fertilizer' %}" style="text-decoration: none; color: inherit;" target="_self">
-                    <div class="content">
-                        <div class="icon"><img src="media/images/rectangle-12-1.png" alt="" /></div>
-                        <h5 class="mt-4 mb-3">Soil Recommedation</h5>
-                        <p>
-                            Suggests fertilizers and application rates tailored to crop and soil health for optimal
-                            growth.
-                        </p>
-
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 feature" data-aos="fade-up">
-                <a href="{% url 'disease_prediction'%}" style="text-decoration: none; color: inherit;" target="_self">
-                    <div class="content">
-                        <div class="icon"><img src="media/images/rectangle-12-2.png" alt="" /></div>
-                        <h5 class="mt-4 mb-3">Plant Diseases</h5>
-                        <p>
-                            Uses AI to detect and diagnose plant diseases via media/images, offering treatment
-                            recommendations.
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-
-
-
         </div>
-       
     </section>
+
 
 
     <!-- Reviews Section -->
@@ -226,9 +225,8 @@
                     <h1>Our Testimonial</h1>
                     <div class="divider"></div>
                     <p>
-                        There are many passages of lorem ipsum available, but majority
-                        have suffered alteration in some form, by injecting humo, or
-                        randomised words which do not look even slightly
+                        Discover the stories of our valued customers and their experiences with us. See how we've made a
+                        difference in their lives and why they trust us for their needs.
                     </p>
                 </div>
             </div>
@@ -239,12 +237,12 @@
                         <div class="person">
                             <img src="media/images/avatar_1.jpg" alt="" />
                             <div class="text ms-3">
-                                <h6 class="mb-0">Emma R.</h6>
-                                <small>Google</small>
+                                <h6 class="mb-0">Rajiv R.</h6>
+                                <small>Mumbai</small>
                             </div>
                         </div>
                         <p class="pt-4">
-                            CropHealthPro is fantastic! Accurate pest detection, real-time updates, and
+                            FarmWise is fantastic! Accurate pest detection, real-time updates, and
                             easy-to-understand reports
                             have made managing my crops so much easier. Highly recommend!
                         </p>
@@ -263,8 +261,8 @@
                         <div class="person">
                             <img src="media/images/avatar_2.jpg" alt="" />
                             <div class="text ms-3">
-                                <h6 class="mb-0">Rajiv S.</h6>
-                                <small>Google</small>
+                                <h6 class="mb-0">Imran S.</h6>
+                                <small>Nagpur</small>
                             </div>
                         </div>
                         <p class="pt-4">
@@ -287,8 +285,8 @@
                         <div class="person">
                             <img src="media/images/avatar_3.jpg" alt="" />
                             <div class="text ms-3">
-                                <h6 class="mb-0">Sarah M.</h6>
-                                <small>Google</small>
+                                <h6 class="mb-0">Sara M.</h6>
+                                <small>Gujarat</small>
                             </div>
                         </div>
                         <p class="pt-4">
@@ -311,8 +309,8 @@
                         <div class="person">
                             <img src="media/images/avatar_2.jpg" alt="" />
                             <div class="text ms-3">
-                                <h6 class="mb-0">Daniel K.</h6>
-                                <small>Google</small>
+                                <h6 class="mb-0">Divesh K.</h6>
+                                <small>Uttarakhand</small>
                             </div>
                         </div>
                         <p class="pt-4">
@@ -335,8 +333,8 @@
                         <div class="person">
                             <img src="media/images/avatar_3.jpg" alt="" />
                             <div class="text ms-3">
-                                <h6 class="mb-0">Maria L.</h6>
-                                <small>Google</small>
+                                <h6 class="mb-0">Manisha L.</h6>
+                                <small>Karanataka</small>
                             </div>
                         </div>
                         <p class="pt-4">
@@ -359,12 +357,12 @@
                         <div class="person">
                             <img src="media/images/avatar_1.jpg" alt="" />
                             <div class="text ms-3">
-                                <h6 class="mb-0">Alex J.</h6>
-                                <small>Google</small>
+                                <h6 class="mb-0">Arun J.</h6>
+                                <small>Kerala</small>
                             </div>
                         </div>
                         <p class="pt-4">
-                            CropHealthPro is excellent! The AI insights are precise, and the real-time monitoring helps
+                            FarmWise is excellent! The AI insights are precise, and the real-time monitoring helps
                             me catch
                             issues early. Highly effective tool for modern farming.
                         </p>
@@ -386,52 +384,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 section-intro text-center" data-aos="fade-up">
-                    <h1>Our Blog Posts</h1>
+                    <h1>Latest News</h1>
                     <div class="divider"></div>
                     <p>
-                        There are many passages of lorem ipsum available, but majority
-                        have suffered alteration in some form, by injecting humo, or
-                        randomised words which do not look even slightly
+                        Get the latest news about the agriculture feild here!
                     </p>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-4" data-aos="fade-up">
-                    <img src="media/images/blog_post1.jpg" alt="blogpost pic" />
-                    <div class="mt-4">
-                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
-                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                            labore eum dolore?
-                        </p>
+            <!-- Dynamic News Articles will be inserted here -->
+            <div class="container" id="news-articles">
+                {% if articles %}
+                <div class="row">
+                    {% for article in articles %}
+                    <div class="col-md-4" data-aos="fade-up">
+                        <img src="{{ article.urlToImage|default:'images/default_image.jpg' }}" alt="blogpost pic" />
+                        <div class="mt-4">
+                            <small>Posted in <a href="#">{{ article.source.name }}</a> {{ article.publishedAt|date:"F j,
+                                Y" }}</small>
+                            <h5 class="mt-1 mb-2"><a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+                            </h5>
+                            <p>{{ article.description|default:'No description available.' }}</p>
+                        </div>
                     </div>
+                    {% endfor %}
                 </div>
-
-                <div class="col-md-4" data-aos="fade-up">
-                    <img src="media/images/blog_post2.jpg" alt="blogpost pic" />
-                    <div class="mt-4">
-                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
-                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                            labore eum dolore?
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-4" data-aos="fade-up">
-                    <img src="media/images/blog_post3.jpg" alt="blogpost pic" />
-                    <div class="mt-4">
-                        <small>Posted in <a href="#">Web Design</a> June 20, 2023</small>
-                        <h5 class="mt-1 mb-2"><a href="#">Web Development in 2055</a></h5>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                            labore eum dolore?
-                        </p>
-                    </div>
-                </div>
+                {% else %}
+                <p>No news articles found for the specified query.</p>
+                {% endif %}
             </div>
         </div>
     </section>
@@ -444,13 +424,25 @@
                     <h1>About Us</h1>
                     <div class="divider"></div>
                     <p>
-                        There are many passages of lorem ipsum available, but majority
-                        have suffered alteration in some form, by injecting humo, or
-                        randomised words which do not look even slightly
+                        Welcome User, we believe in the transformative power of technology to reshape agriculture and
+                        enhance the lives of farmers. Our platform is designed to provide farmers with smart,
+                        data-driven solutions that empower them to make informed decisions and maximize their crop
+                        yields. By harnessing the potential of AI and ML, we offer real-time insights and personalized
+                        recommendations that take into account critical factors like soil conditions, weather patterns,
+                        and crop health.
+                        Our mission goes beyond just increasing productivity; we aim to create a sustainable and
+                        resilient agricultural ecosystem in India. We understand the unique challenges faced by farmers
+                        and are committed to providing tools that not only improve efficiency but also ensure long-term
+                        success. Our team of dedicated experts is passionate about revolutionizing traditional farming
+                        practices and bringing innovative solutions to the forefront of the industry.
+                        Join us on this journey as we work together to cultivate a brighter and more prosperous future
+                        for agriculture. Whether you're a farmer seeking to optimize your operations or someone
+                        interested in the intersection of technology and farming, [Your Project Name] is here to support
+                        and guide you every step of the way.
                     </p>
                 </div>
             </div>
-
+            <!-- 
             <div class="row">
                 <div class="col-md-4" data-aos="fade-up">
                     <img src="media/images/blog_post1.jpg" alt="blogpost pic" />
@@ -487,7 +479,7 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -509,21 +501,21 @@
 
             <div class="row">
                 <div class="col-md-8 mx-auto" data-aos="fade-up">
-                    <form action="#" class="row g-4">
+                    <form id="contactForm" class="row g-4" onsubmit="sendMail()">
                         <div class="form-group col-md-6">
-                            <input type="text" placeholder="Full Name" class="form-control" />
+                            <input type="text" placeholder="Full Name" id="name" class="form-control" />
                         </div>
 
                         <div class="form-group col-md-6">
-                            <input type="email" placeholder="Email Address" class="form-control" />
+                            <input type="email" placeholder="Email Address" id="email" class="form-control" />
                         </div>
 
                         <div class="form-group col-md-12">
-                            <input type="text" placeholder="Subject" class="form-control" />
+                            <input type="text" placeholder="Subject" id="subject" class="form-control" />
                         </div>
 
                         <div class="form-group col-md-12">
-                            <textarea name="" id="" cols="30" rows="8" class="form-control"
+                            <textarea name="" id="message" cols="30" rows="8" class="form-control"
                                 placeholder="Message"></textarea>
                         </div>
 
@@ -560,11 +552,63 @@
         </div>
     </footer>
     <a href="{% url 'chat12' %}">
-    <button class="chatbot-button">
-        
-        <img src="media/images/chatbot_icon.png" alt="Chatbot" />
-    </button>
-</a>
+        <button class="chatbot-button">
+
+            <img src="media/images/chatbot_icon.png" alt="Chatbot" />
+        </button>
+    </a>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,gu,kn,ml,mr,pa,ta,te,bn,ur,as,or',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element')
+        };
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "YTnSacD9-FL4BPtGX",
+            });
+        })();
+    </script>
+    <script>
+        emailjs.init("YTnSacD9-FL4BPtGX"); // Replace with your actual Public Key
+
+        function sendMail() {
+            
+            var params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+
+            };
+            console.log(params)
+            const serviceID = "service_o3julvw";
+            const templateID = "template_7xltjcc";
+
+            emailjs.send(serviceID, templateID, params)
+                .then(res => {
+                    document.getElementById("name").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("subject").value = "";
+                    document.getElementById("message").value = "";
+                    console.log(res);
+                    alert("Your message sent successfully!!")
+
+                })
+                .catch(err => console.log(err));
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
     <!-- Bootstrap JS with popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -574,5 +618,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="{% static 'js/script.js' %}"></script>
-</body> 
+</body>
+
 </html>

@@ -1,35 +1,44 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
 }
 
 #navbar {
-    background-color: #d0f7fe;
+    background-color: #d3eb9a;
     color: black;
     padding: 5px 20px;
     line-height: 5px;
+    text-align: center;
 }
 
 #chat-container {
     width: 90%;
     margin-top: 100%;
     margin: 50px auto;
+    border-radius: 20px;
+
 }
 
 #chat-messages {
     border: 1px solid #ccc;
     height: 350px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding: 10px;
+    border-radius: 20px;
+    border-top: 10px solid #d3eb9a ;
+    margin-bottom: 20px;
+
+
 }
 
 #user-input {
     width: 97%;
     padding: 15px 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px;
     margin-right: 10px;
+    border-top: 10px solid #d3eb9a ;
 }
 
 #user-message {
@@ -47,10 +56,11 @@ body {
     padding: 15px 15px;
     margin-left: 20px;
     border: none;
-    background-color: #d0f7fe;
+    background-color: #115525;
     color: black;
     border-radius: 5px;
     cursor: pointer;
+    color: aliceblue;
 }
 
 #navbar img {

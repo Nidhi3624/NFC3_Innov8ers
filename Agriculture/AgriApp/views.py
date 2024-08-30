@@ -3,7 +3,7 @@ import joblib
 import os
 import numpy as np
 import pandas as pd
-from .utils import get_nutrient_message,getdata
+from .utils import get_nutrient_message,getdata,news_view,get_nutrient_message1
 from django.conf import settings
 from django.templatetags.static import static
 import csv
@@ -34,7 +34,11 @@ data1 = pd.read_csv(threshold_data)
 
 # Create your views here.
 def HomePage(request):
-    return render(request,"index.html")
+    selected_articles = news_view()  # Get the selected articles
+    context = {
+        'articles': selected_articles  # Pass the articles as a context dictionary
+    }
+    return render(request, "index.html", context)
 
 # crop prediction
 def predict(request):
@@ -75,7 +79,7 @@ def predict(request):
         
         # print()
         # print(thresholds)
-        message = get_nutrient_message(nitrogen,phosphorus,potassium,thresholds)
+        message = get_nutrient_message1(nitrogen,phosphorus,potassium,thresholds)
         # Render the prediction result in the template
         if isinstance(message, list):
             message = "\n".join(message)
@@ -279,8 +283,7 @@ def login_view(request):
         print(user)
         if user is not None:
             login(request, user)
-            messages.success(request, 'You have successfully logged in.')
-            print("successfull")
+            
             return redirect('dash1')  # Replace 'home' with your desired redirect page
         else:
             messages.error(request, 'Invalid username or password.')
@@ -292,3 +295,9 @@ def login_view(request):
 @login_required
 def dashboard1(request):
     return render(request,'dashboard_main.html')
+
+
+
+
+
+

@@ -1,16 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>Prediction Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/disease.css' %}">
 </head>
-<body>
-    <h1>Recommedation Result</h1>
 
-    {% if message %}
-        <p><strong>{{message|safe}}</strong></p>
-    {% endif %}
-    <a href="{% url 'predict' %}">Make another prediction</a>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-image">
+                <h3 class="card-heading"> Disease Identification</h3>
+                <h6>This data state about the Disease cause to your leaf</h6>
+            </div>
+            <form class="card-form">
+                <h1>Disease Identification Report:</h1>
+                {% if message %}
+                <p><strong>{{message|safe}}</strong></p>
+                {% endif %}
+            </form>
+            <div class="card-info">
+                <p> <a href="{% url 'predict' %}">Make another prediction</a></p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

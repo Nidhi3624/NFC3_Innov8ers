@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    {% load static %}
 <head>
-    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/disease.css' %}">
 </head>
 <body>
-    <h1>{{ title }}</h1>
-    <p>Prediction: {{ prediction }}</p>
-    <p>Info: {{message|safe}}</p>
-    <a href="{% url 'disease_prediction' %}">Try again</a>
+    <div class="container">
+        <div class="card">
+            <div class="card-image">
+                <h3 class="card-heading"> Fertilizer Recommendation</h3>
+                <h6>Analyzed crop, soil nutrient levels, pH and soil mositure details showing recommended data:</h6>
+            </div>
+            <div class="card-form">
+               <h1 id="result">Fertilization Recommendation Result:</h1>
+               <p><strong>Prediction: {{ prediction }}</strong></p>
+               <p>Info: {{message|safe}}</p>
+            </div>
+            <div class="card-info">
+                <a href="{% url 'disease_prediction' %}">Try again</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -48,7 +48,7 @@ body {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #2c3e50;
+    background-color: #115525;
     color: #ecf0f1;
     border: none;
     border-radius: 4px;
@@ -66,7 +66,7 @@ button:hover {
 }
 
 .redirect a {
-    color: #2c3e50;
+    color: #115525;
     text-decoration: none;
     font-size: 14px;
 }

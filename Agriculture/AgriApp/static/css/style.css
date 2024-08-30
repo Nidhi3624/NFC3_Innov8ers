@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800;900&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,600|Raleway:300,400,600|Mr+Dafoe:400|Rakkas:400");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 body {
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "DM Sans", sans-serif;
     line-height: 1.8;
 }
 
@@ -27,9 +29,16 @@ a {
 
 }
 
+.display-4 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 100px;
+    line-height: 0.8;
+}
+
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show>.nav-link {
-    background: -webkit-linear-gradient(#00e0fe, #1107fe);
+    background: -webkit-linear-gradient(#d3eb9a, #115525);
 
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -49,13 +58,18 @@ section {
     position: relative;
 }
 
+.web_name{
+    font-size: 1.5em;
+    margin-right: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(17, 7, 254, 0.7), rgba(0, 224, 254, 0.7));
+    background: linear-gradient(rgba(42, 239, 71, 0.7), rgba(0, 220, 254, 0.7));
     z-index: -1;
 }
 
@@ -79,7 +93,7 @@ section {
 }
 
 .btn-main {
-    background: linear-gradient(to right, #00e0fe, #1107fe);
+    background: linear-gradient(to right, #d3eb9a, #115525);
     border-radius: 100px;
     border: none;
     font-weight: 600;
@@ -102,7 +116,7 @@ section {
 .section-intro .divider {
     height: 4px;
     width: 70px;
-    background: linear-gradient(to right, #00e0fe, #1107fe);
+    background: linear-gradient(to right, #d3eb9a,#115525 );
     margin: 16px auto;
 }
 
@@ -113,7 +127,7 @@ img {
 .service .service-img .icon {
     width: 90px;
     height: 90px;
-    background: linear-gradient(to right, #00e0fe, #1107fe);
+    background: linear-gradient(to right, #d3eb9a, #115525);
     color: #fff;
     border-radius: 100px;
     display: flex;
@@ -158,7 +172,7 @@ img {
 .video-btn {
     width: 60px;
     height: 60px;
-    background: linear-gradient(to right, #00e0fe, #1107fe);
+    background: linear-gradient(to right, #d3eb9a, #115525);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -174,7 +188,7 @@ img {
 /* Feature Section */
 
 .feature i {
-    background: -webkit-linear-gradient(#00e0fe, #1107fe);
+    background: -webkit-linear-gradient(#d3eb9a, #115525);
 
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -183,7 +197,7 @@ img {
 
     -webkit-text-fill-color: transparent;
 
-    font-size: 54px;
+    font-size: 52px;
 
 }
 
@@ -239,7 +253,7 @@ form .form-control:focus {
 /* Footer */
 
 footer {
-    background: linear-gradient(to right, #00e0fe, #1107fe);
+    background: linear-gradient(to right, #d3eb9a, #115525);
     color: #fff;
 }
 
@@ -311,7 +325,7 @@ footer a {
     padding: 8px 20px;
     font-size: 14px;
     color: #fff;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
+    background: linear-gradient(to right, #d3eb9a, #115525);
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -340,7 +354,7 @@ footer a {
     height: 60px;    /* Height of the button */
     border-radius: 50%; /* Rounded button */
     border: none;    /* Remove default border */
-    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+    background: linear-gradient(to right, #d3eb9a, #115525); /* Gradient background */
     box-shadow: 0 4px 10px rgba(0, 114, 255, 0.2); /* Shadow effect */
     cursor: pointer; /* Cursor change on hover */
     z-index: 1000;   /* High z-index to stay above other content */
@@ -363,3 +377,30 @@ footer a {
     box-shadow: 0 8px 15px rgba(0, 114, 255, 0.3); /* Enhanced shadow on hover */
 }
 
+.translate-container {
+    margin: 15px 0;  /* Reduce margin around the widget */
+    text-align: center;  /* Center the widget */
+    padding: 5px;  /* Reduce padding around the widget */
+    display: inline-block;  /* Make container fit the content width */
+    font-size: 12px;  /* Decrease the font size */
+    line-height: 1.2;  /* Adjust line height for compactness */
+    border: 1px solid #ccc;  /* Optional border for visibility */
+    border-radius: 4px;  
+}
+
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #ecf1e6; /* Background color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6e8867; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #324033; /* Color of the scrollbar thumb when hovered */
+}

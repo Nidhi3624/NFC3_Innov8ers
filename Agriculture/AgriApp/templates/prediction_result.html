@@ -1,16 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
-    <title>Prediction Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/crop_rec.css' %}">
 </head>
+
 <body>
-    <h1>Prediction Result</h1>
-    <p>The Suggested Crop for Given Climatic Conditions is: <strong>{{ prediction }}</strong></p>
-    {% if message %}
-        <p><strong>{{message|safe}}</strong></p>
-    {% endif %}
-    <a href="{% url 'predict' %}">Make another prediction</a>
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">
+                <h3 class="card-heading"> Crop Recommendation</h3>
+                <h6>Following details about your soil and weather conditions to receive a crop recommendation
+                    tailored to your farm's needs. Accurate inputs ensure the most suitable crop suggestions for optimal
+                    yield:</h6>
+            </div>
+            <div id="result">
+                <h1>The most suitable crop for your condition is <strong>{{prediction}}</strong></h1>
+            </div>
+            {% if message %}
+            <p><strong>{{message|safe}}</strong></p>
+            {% endif %}
+            <div class="card-info">
+                <p> <a href="{% url 'predict' %}">Make another prediction</a></p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

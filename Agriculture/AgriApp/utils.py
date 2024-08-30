@@ -1,4 +1,6 @@
 import pandas as pd
+import requests
+from random import shuffle
 
 messages_dict = {
             "NHigh" : "Nitrogen content in soil is high!\n Consider the following fertilizers:\n -Avoid adding nitrogen-rich fertilizers. \n -Use balanced or low-nitrogen fertilizers (e.g., 10-10-10 or 5-10-10). \n Other Suggestions: \n 1.Add organic matter like compost or aged manure to the soil.\n2.Grow crops that require less nitrogen or can tolerate high levels (e.g., carrots, beets).\n3.Increase soil drainage to prevent waterlogging.\n4.Practice crop rotation to balance soil nutrients.\n5.Use green manures like clover or legumes.\n6.Monitor crop health for signs of nitrogen toxicity.\n7.Adjust irrigation practices to avoid waterlogging.",
@@ -335,3 +337,63 @@ def getdata(title):
     message = []
     message.append(disease_dict.get(title))
     return message
+
+def news_view():
+    api_key = 'c9ef3bafa2234c92a57beb93a7c5c648'
+    api_url = f"https://newsapi.org/v2/everything?q=Indian farmers AND (laws OR schemes OR prices OR methods OR government)&language=en&apiKey={api_key}"
+    
+    try:
+        response = requests.get(api_url)
+        response.raise_for_status()  # Will raise an HTTPError if the HTTP request returned an unsuccessful status code
+        data = response.json()
+
+        articles = data.get('articles', [])
+
+        # Shuffle the articles array to randomize the order
+        from random import shuffle
+        shuffle(articles)
+
+        # Select a subset of articles to display (e.g., first 3 random articles)
+        selected_articles = articles[:3]
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching the specific Farmers News API: {e}")
+        selected_articles = []
+
+    # Pass the selected articles to the template
+    return selected_articles
+
+
+
+messages_dict1 = {
+    "NHigh": "Nitrogen high! Use low-nitrogen fertilizers, add compost, rotate crops, and improve drainage.",
+    "NLow": "Nitrogen low! Apply nitrogen fertilizers, use manure, plant legumes, and ensure aeration.",
+    "PLow": "Phosphorus low! Apply phosphorus fertilizers, adjust soil pH, and monitor plants.",
+    "PHigh": "Phosphorus high! Avoid phosphorus fertilizers, improve drainage, and use absorbing crops.",
+    "KHigh": "Potassium high! Avoid potassium fertilizers, add compost, and monitor for imbalances.",
+    "KLow": "Potassium low! Apply potassium fertilizers, use wood ash, and adjust soil pH."
+}
+
+
+def get_nutrient_message1(nitrogen, phosphorus, potassium, thresholds):
+    messages = []
+
+    # Check Nitrogen
+    if nitrogen > thresholds['N']:
+        messages.append(messages_dict1.get('NHigh'))
+    elif nitrogen < thresholds['N']:
+        messages.append(messages_dict.get('NLow'))
+
+    # Check Phosphorus
+    if phosphorus > thresholds['P']:
+        messages.append(messages_dict1.get('PHigh'))
+    elif phosphorus < thresholds['P']:
+        messages.append(messages_dict1.get('PLow'))
+
+    # Check Potassium
+    if potassium > thresholds['K']:
+        messages.append(messages_dict1.get('KHigh'))
+    elif potassium < thresholds['K']:
+        messages.append(messages_dict1.get('KLow'))
+
+    return messages

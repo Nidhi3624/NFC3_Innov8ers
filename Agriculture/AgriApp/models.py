@@ -38,3 +38,14 @@ class ResNet9(nn.Module):
         out = self.res2(out) + out
         out = self.classifier(out)
         return out
+    
+
+
+class ContactMessage(models.Model):
+    full_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+
+    def __str__(self):
+        return f"{self.full_name} - {self.subject}"

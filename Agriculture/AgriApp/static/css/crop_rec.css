@@ -111,10 +111,10 @@ input {
     &:focus,
     &:valid {
         outline: 0;
-        border-bottom-color: #6658d3;
+        border-bottom-color: #115525;
 
         &+.input-label {
-            color: #6658d3;
+            color: #115525;
             transform: translateY(-1.5rem);
         }
     }
@@ -131,7 +131,7 @@ input {
     padding: 1em;
     width: 30%;
     font-weight: 500;
-    background-color: #6658d3;
+    background-color: #115525;
     border-radius: 6px;
     color: #FFF;
     border: 0;
@@ -151,7 +151,7 @@ input {
 
     a {
         display: block;
-        color: #6658d3;
+        color: #115525;
         text-decoration: none;
     }
 }
