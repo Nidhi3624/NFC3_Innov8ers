@@ -36,38 +36,40 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="web_name">FarmWise</div>
-            <div class="translate-container" id="google_translate_element"></div>
-            <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#features">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#blog">News</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-                <!-- Interactive Login Button -->
-                <li class="nav-item login-item">
-                    <a href="{% url 'login' %}" style="text-decoration: none; color: inherit;" target="_self">
-                        <button class="login-button">Login</button>
-                    </a>
-                </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="web_name">FarmWise</div>
+                <div class="translate-container" id="google_translate_element"></div>
+                <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <!-- Interactive Login Button -->
+                    <li class="nav-item login-item">
+                        <a href="{% url 'login' %}" style="text-decoration: none; color: inherit;" target="_self">
+                            <button class="login-button">Login</button>
+                        </a>
+                    </li>
 
-            </ul>
+                </ul>
+            </div>
         </div>
-        </div>
+
     </nav>
 
     <!-- Hero Section Starts -->
@@ -580,7 +582,7 @@
         emailjs.init("YTnSacD9-FL4BPtGX"); // Replace with your actual Public Key
 
         function sendMail() {
-            
+
             var params = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
